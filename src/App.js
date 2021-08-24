@@ -1,10 +1,14 @@
 import { useState } from "react";
+import ShowDate from "./components/ShowDate"
 
 
 function App() {
   const [name, setName]  = useState("Ashok");
   const [flag, setFlag]  = useState(false);
-  const [step, setSteps]  = useState(0);
+  const [step, setSteps]  = useState(()=>{
+    console.log("one time");
+    return 0;
+  });
   const [names, setNames]=  useState([]);
 
   function changeName() {
@@ -13,7 +17,7 @@ function App() {
   }
   function increment() {
     setSteps((prevState) => prevState+1);
-    setSteps((prevState) => prevState+1);
+    console.log("Increment called");
   }
   function decreament() {
     setSteps(step-1);
@@ -49,6 +53,7 @@ function App() {
         {names.map((item)=>(
         <li key={item.id}>{item.name}</li>))}
       </ul>
+      <ShowDate></ShowDate>
     </>
   );
 }
