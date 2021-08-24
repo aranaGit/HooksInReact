@@ -13,7 +13,7 @@ function Showdate() {
     }, []);
 
     //componentDidUpdate
-    useEffect(() => {
+ /*   useEffect(() => {
         console.log("component is mounted or updated by second useEffect");
         const interval = setInterval(displayDate, 1000);
 
@@ -22,7 +22,7 @@ function Showdate() {
             console.log("clear interval");
             clearInterval(interval);
         }
-    }, [date]);
+    }, [date]);*/
     return (
         <div>
             <div>{date}</div>
